@@ -1,0 +1,26 @@
+package com.stackroute;
+
+import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class Application
+{
+    public static void main( String[] args )
+    {
+        System.out.println("Using Bean Factory");
+        Resource resource=new ClassPathResource("beans.xml");
+        BeanFactory factory=new XmlBeanFactory(resource);
+        Movie movie=(Movie)factory.getBean("m1");
+        System.out.println(movie);
+
+        System.out.println("Using Application Context");
+        ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie1=context.getBean("m1",Movie.class);
+        System.out.println(movie1);
+    }
+}
