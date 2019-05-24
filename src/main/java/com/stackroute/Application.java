@@ -36,10 +36,11 @@ public class Application
         System.out.println(movieS1==movieS2);
 
         //Multiple names of bean
+        System.out.println("Access Movie bean by its two different names");
         Movie movieBean1=context1.getBean("movieA",Movie.class);
         Movie movieBean2=context1.getBean("movieB",Movie.class);
-
         System.out.println(movieBean1);
         System.out.println(movieBean2);
+
     }
 }
