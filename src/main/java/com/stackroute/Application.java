@@ -15,12 +15,12 @@ public class Application
         System.out.println("Using Bean Factory");
         Resource resource=new ClassPathResource("beans.xml");
         BeanFactory factory=new XmlBeanFactory(resource);
-        Movie movie=(Movie)factory.getBean("m1");
-        System.out.println(movie);
+        Movie movie=(Movie)factory.getBean("movie");
+        System.out.println(movie.getActor().getName()+" Acted in "+movie.getMovieName());
 
         System.out.println("Using Application Context");
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1=context.getBean("m1",Movie.class);
+        Movie movie1=context.getBean("movie",Movie.class);
         System.out.println(movie1);
     }
 }
