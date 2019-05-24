@@ -27,16 +27,15 @@
     </bean>-->
 
 
-    <bean id="act1" class="com.stackroute.domain.Actor">
+    <bean name="actor" class="com.stackroute.domain.Actor">
         <property name="name" value="Hritik"/>
         <property name="gender" value="M"/>
         <property name="age" value="50"/>
     </bean>
 
-    <bean name="movie" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean name="movie" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
         <constructor-arg name="id" value="1"/>
-        <constructor-arg name="movieName" value="abcd"/>
-        <constructor-arg name="actor" ref="act1"/>
+        <constructor-arg name="movieName" value="agneepath"/>
     </bean>
 
 </beans>
