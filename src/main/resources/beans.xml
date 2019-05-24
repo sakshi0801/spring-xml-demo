@@ -34,4 +34,8 @@
     <bean id="resourceLoader1" class="com.stackroute.awareInterface.ResourceLoaderAwareDemo">
 
     </bean>
+
+    <bean id="lifecycle1" class="com.stackroute.demo.BeanLifeCycleDemo" init-method="customInit" destroy-method="customDestroy">
+
+    </bean>
 </beans>

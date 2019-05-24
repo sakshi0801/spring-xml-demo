@@ -45,5 +45,7 @@ public class Application
         System.out.println(movieBean1);
         System.out.println(movieBean2);*/
 
+        ClassPathXmlApplicationContext cxt=(ClassPathXmlApplicationContext)context;
+        cxt.close();
     }
 }
