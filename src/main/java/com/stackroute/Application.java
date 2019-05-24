@@ -12,17 +12,16 @@ public class Application
 {
     public static void main( String[] args )
     {
-       /*System.out.println("Using Bean Factory");
+       System.out.println("Using Bean Factory");
         Resource resource=new ClassPathResource("beans.xml");
         BeanFactory factory=new XmlBeanFactory(resource);
-        Movie movie=(Movie)factory.getBean("movie");
+        Movie movie=(Movie)factory.getBean("movie1");
         System.out.println(movie.getActor().getName()+" Acted in "+movie.getMovieName());
-*/
+
         System.out.println("Using Application Context");
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1=context.getBean("movie1",Movie.class);
         System.out.println(movie1.getActor().getName()+" Acted in "+movie1.getMovieName());
-
 
         //Movie movie2=context.getBean("movie2",Movie.class);
         //System.out.println(movie2);
@@ -45,5 +44,6 @@ public class Application
         Movie movieBean2=context1.getBean("movieB",Movie.class);
         System.out.println(movieBean1);
         System.out.println(movieBean2);*/
+
     }
 }

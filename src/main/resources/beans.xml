@@ -14,52 +14,24 @@
         <property name="age" value="50"/>
     </bean>
 
-    <!--<bean id="actor2" class="com.stackroute.domain.Actor">
-        <property name="name" value="Priyanka"/>
-        <property name="gender" value="F"/>
-        <property name="age" value="30"/>
-    </bean>-->
-<!--
-    <bean id="actor3" class="com.stackroute.domain.Actor">
-        <constructor-arg type="java.lang.String" value="Varun"/>
-        <constructor-arg type="java.lang.String" value="M"/>
-        <constructor-arg type="int" value="25"/>
-    </bean>-->
-    <!--
-    <bean name="actor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Hritik"/>
-        <property name="gender" value="M"/>
-        <property name="age" value="50"/>
-    </bean>
--->
     <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byName">
         <property name="id" value="1"/>
         <property name="movieName" value="agneepath"/>
     </bean>
 
-<!--
-    <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byType">
-        <property name="id" value="2"/>
-        <property name="movieName" value="bajiroa mastani"/>
-    </bean>
--->
+    <bean id="applicationAware1" class="com.stackroute.awareInterface.ApplicationContextAwareDemo">
 
-    <!--<bean id="movie3" class="com.stackroute.domain.Movie">
-        <constructor-arg name="id" value="3"/>
-        <constructor-arg name="movieName" value="judwa2"/>
-        <constructor-arg name="actor" ref="actor3"/>
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="id" value="101"/>
-        <constructor-arg name="movieName" value="judwa"/>
-        <constructor-arg name="actor" ref="actor3"/>
+    <bean id="beanAware1" class="com.stackroute.awareInterface.BeanFactoryAwareDemo">
+
     </bean>
 
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie">
-        <constructor-arg name="id" value="201"/>
-        <constructor-arg name="movieName" value="abcd2"/>
-        <constructor-arg name="actor" ref="actor3"/>
-    </bean>-->
+    <bean id="beanNameAware1" class="com.stackroute.awareInterface.BeanNameAwareDemo">
 
+    </bean>
+
+    <bean id="resourceLoader1" class="com.stackroute.awareInterface.ResourceLoaderAwareDemo">
+
+    </bean>
 </beans>
