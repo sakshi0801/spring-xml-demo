@@ -8,23 +8,23 @@
        http://www.springframework.org/schema/context/spring-context-3.0.xsd" >
 
 
-    <bean id="act1" class="com.stackroute.domain.Actor">
+    <bean id="actor" class="com.stackroute.domain.Actor">
         <property name="name" value="Hritik"/>
         <property name="gender" value="M"/>
         <property name="age" value="50"/>
     </bean>
 
-    <bean id="act2" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="Priyanka"/>
-        <constructor-arg index="1" value="F"/>
-        <constructor-arg index="2" value="22"/>
-    </bean>
-
-    <bean id="act3" class="com.stackroute.domain.Actor">
+    <!--<bean id="actor2" class="com.stackroute.domain.Actor">
+        <property name="name" value="Priyanka"/>
+        <property name="gender" value="F"/>
+        <property name="age" value="30"/>
+    </bean>-->
+<!--
+    <bean id="actor3" class="com.stackroute.domain.Actor">
         <constructor-arg type="java.lang.String" value="Varun"/>
         <constructor-arg type="java.lang.String" value="M"/>
         <constructor-arg type="int" value="25"/>
-    </bean>
+    </bean>-->
     <!--
     <bean name="actor" class="com.stackroute.domain.Actor">
         <property name="name" value="Hritik"/>
@@ -32,34 +32,34 @@
         <property name="age" value="50"/>
     </bean>
 -->
-    <bean id="movie1" class="com.stackroute.domain.Movie">
-        <constructor-arg name="id" value="1"/>
-        <constructor-arg name="movieName" value="agneepath"/>
-        <constructor-arg name="actor" ref="act1"/>
+    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byName">
+        <property name="id" value="1"/>
+        <property name="movieName" value="agneepath"/>
     </bean>
 
-    <bean id="movie2" class="com.stackroute.domain.Movie">
-        <constructor-arg name="id" value="2"/>
-        <constructor-arg name="movieName" value="bajiroa mastani"/>
-        <constructor-arg name="actor" ref="act2"/>
+<!--
+    <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byType">
+        <property name="id" value="2"/>
+        <property name="movieName" value="bajiroa mastani"/>
     </bean>
+-->
 
-    <bean id="movie3" class="com.stackroute.domain.Movie">
+    <!--<bean id="movie3" class="com.stackroute.domain.Movie">
         <constructor-arg name="id" value="3"/>
         <constructor-arg name="movieName" value="judwa2"/>
-        <constructor-arg name="actor" ref="act3"/>
+        <constructor-arg name="actor" ref="actor3"/>
     </bean>
 
     <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="id" value="101"/>
         <constructor-arg name="movieName" value="judwa"/>
-        <constructor-arg name="actor" ref="act3"/>
+        <constructor-arg name="actor" ref="actor3"/>
     </bean>
 
     <bean name="movieA,movieB" class="com.stackroute.domain.Movie">
         <constructor-arg name="id" value="201"/>
         <constructor-arg name="movieName" value="abcd2"/>
-        <constructor-arg name="actor" ref="act3"/>
-    </bean>
+        <constructor-arg name="actor" ref="actor3"/>
+    </bean>-->
 
 </beans>

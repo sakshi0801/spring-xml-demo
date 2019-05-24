@@ -23,7 +23,11 @@ public class Application
         Movie movie1=context.getBean("movie1",Movie.class);
         System.out.println(movie1.getActor().getName()+" Acted in "+movie1.getMovieName());
 
-        Movie movie2=context.getBean("movie2",Movie.class);
+
+        //Movie movie2=context.getBean("movie2",Movie.class);
+        //System.out.println(movie2);
+
+        /*Movie movie2=context.getBean("movie2",Movie.class);
         System.out.println(movie2.getActor().getName()+" Acted in "+movie2.getMovieName());
 
         Movie movie3=context.getBean("movie3",Movie.class);
@@ -40,7 +44,6 @@ public class Application
         Movie movieBean1=context1.getBean("movieA",Movie.class);
         Movie movieBean2=context1.getBean("movieB",Movie.class);
         System.out.println(movieBean1);
-        System.out.println(movieBean2);
-
+        System.out.println(movieBean2);*/
     }
 }
