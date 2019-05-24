@@ -20,14 +20,26 @@ public class Application
 */
         System.out.println("Using Application Context");
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1=context.getBean("movie",Movie.class);
+        Movie movie1=context.getBean("movie1",Movie.class);
         System.out.println(movie1.getActor().getName()+" Acted in "+movie1.getMovieName());
 
-        //testing bean scope
-        /*ApplicationContext context1=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie2=context1.getBean("movie",Movie.class);
-        Movie movie3=context1.getBean("movie",Movie.class);
-        System.out.println(movie2==movie3);*/
+        Movie movie2=context.getBean("movie2",Movie.class);
+        System.out.println(movie2.getActor().getName()+" Acted in "+movie2.getMovieName());
 
+        Movie movie3=context.getBean("movie3",Movie.class);
+        System.out.println(movie3.getActor().getName()+" Acted in "+movie3.getMovieName());
+
+        //testing bean scope prototype
+        ApplicationContext context1=new ClassPathXmlApplicationContext("beans.xml");
+        Movie movieS1=context1.getBean("movie",Movie.class);
+        Movie movieS2=context1.getBean("movie",Movie.class);
+        System.out.println(movieS1==movieS2);
+
+        //Multiple names of bean
+        Movie movieBean1=context1.getBean("movieA",Movie.class);
+        Movie movieBean2=context1.getBean("movieB",Movie.class);
+
+        System.out.println(movieBean1);
+        System.out.println(movieBean2);
     }
 }
