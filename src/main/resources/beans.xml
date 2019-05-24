@@ -33,7 +33,7 @@
         <property name="age" value="50"/>
     </bean>
 
-    <bean name="movie" class="com.stackroute.domain.Movie">
+    <bean name="movie" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="movieName" value="abcd"/>
         <constructor-arg name="actor" ref="act1"/>

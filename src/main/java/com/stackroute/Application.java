@@ -23,5 +23,11 @@ public class Application
         Movie movie1=context.getBean("movie",Movie.class);
         System.out.println(movie1.getActor().getName()+" Acted in "+movie.getMovieName());
 
+        //testing bean scope
+        ApplicationContext context1=new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie2=context1.getBean("movie",Movie.class);
+        Movie movie3=context1.getBean("movie",Movie.class);
+        System.out.println(movie2==movie3);
+
     }
 }
