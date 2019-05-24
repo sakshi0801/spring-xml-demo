@@ -7,28 +7,36 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd" >
 
-<!--    <bean id="act" class="com.stackroute.domain.Actor">
-        <property name="name" value="varun"/>
+
+    <!--<bean id="act1" class="com.stackroute.domain.Actor">
+        <property name="name" value="Hritik"/>
         <property name="gender" value="M"/>
-        <property name="age" value="25"/>
+        <property name="age" value="50"/>
     </bean>
 
-    <bean id="m1" class="com.stackroute.domain.Movie">
-        <property name="id" value="1"/>
-        <property name="movieName" value="abcd"/>
-        <property name="actor" ref="act"/>
+    <bean id="act2" class="com.stackroute.domain.Actor">
+        <constructor-arg index="0" value="Priyanka"/>
+        <constructor-arg index="1" value="F"/>
+        <constructor-arg index="2" value="22"/>
+    </bean>
+
+    <bean id="act3" class="com.stackroute.domain.Actor">
+        <constructor-arg type="java.lang.String" value="Varun"/>
+        <constructor-arg type="java.lang.String" value="M"/>
+        <constructor-arg type="int" value="25"/>
     </bean>-->
 
-    <bean id="act" class="com.stackroute.domain.Actor">
-        <constructor-arg name="name" value="varun"/>
-        <constructor-arg name="gender" value="M"/>
-        <constructor-arg name="age" value="25"/>
+
+    <bean id="act1" class="com.stackroute.domain.Actor">
+        <property name="name" value="Hritik"/>
+        <property name="gender" value="M"/>
+        <property name="age" value="50"/>
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
+    <bean name="movie" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="movieName" value="abcd"/>
-        <constructor-arg name="actor" ref="act"/>
+        <constructor-arg name="actor" ref="act1"/>
     </bean>
 
 </beans>
